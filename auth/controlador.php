@@ -1,7 +1,6 @@
 <?php
 session_start();
 include 'auth/modelo.php';
-include 'admin/controlador.php';
 
 class Auth{
     
@@ -28,8 +27,7 @@ class Auth{
                 $_SESSION['correo'] = $datos['correo'];
 
                 if ($datos['rol'] === 'admin') {
-                    $dashboard = new DashboardAdmin();
-                    $dashboard->dashboardAdmin();
+                    header("Location: index.php?route=admin");
 
                 } elseif ($datos['rol'] === 'empleado') {
                     header("Location: ../vista/empleado_inicio.php");
@@ -37,7 +35,7 @@ class Auth{
                     header("Location: ../vista/dashboard_cliente.php");
                 }
             } else {
-                echo "<script>alert('Correo o contraseña incorrectos');window.location.href='../vista/login.php';</script>";
+                echo "<script>alert('Correo o contraseña incorrectos');window.location.href='index.php?modulo=login';</script>";
             }
             }
         }else{

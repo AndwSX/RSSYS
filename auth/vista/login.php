@@ -19,7 +19,7 @@
     <div class="right-panel d-flex justify-content-center align-items-center">
       <div class="form-box shadow p-5 rounded bg-white">
         <h2 class="text-success fw-bold text-center mb-4">Iniciar Sesión</h2>
-        <form action="index.php?modulo=login" method="POST">
+        <form action="index.php?route=login" method="POST">
           <input type="email" name="correo" class="form-control mb-3" placeholder="Correo electrónico" required>
           <input type="password" name="contrasena" class="form-control mb-4" placeholder="Contraseña" required>
           <button type="submit" name="iniciar_sesion" class="btn btn-success w-100 mb-3">Ingresar</button>
@@ -27,7 +27,7 @@
         <div class="text-center">
           <a href="olvide_contraseña.html" class="d-block link-success">¿Olvidaste tu contraseña?</a>
           <a href="registro.php" class="d-block link-success">Registrarse</a>
-          <a href="../vista/inicio.php" class="d-block link-success">Volver al inicio</a>
+          <a href="index.php" class="d-block link-success">Volver al inicio</a>
         </div>
       </div>
     </div>

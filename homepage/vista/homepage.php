@@ -18,7 +18,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-        <img src="../Logo/Logo.png" alt="Logo" class="me-2"> Inventario de Papa
+        <img src="assets/img/Logo/Logo.png" alt="Logo" class="me-2"> Inventario de Papa
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
           <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#info">Sobre Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contactenos</a></li>
-          <li class="nav-item"><a class="btn btn-outline-light" href="index.php?modulo=login">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="btn btn-outline-light" href="index.php?route=login">Iniciar Sesión</a></li>
         </ul>
       </div>
     </div>

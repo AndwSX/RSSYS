@@ -1,22 +1,33 @@
 <?php
 
 include 'homepage/controlador.php';
-include 'auth/controlador.php';
 include 'config/database.php';
+include 'auth/controlador.php';
+include 'admin/controlador.php';
 
-$modules = '';
+$route = '';
 
-if(isset($_GET['modulo'])){
+if(isset($_GET['route'])){
 
-    $modules = $_GET['modulo'];
+    $route = $_GET['route'];
 
-    switch($modules){
+    switch($route){
 
         case 'login':
-        $conexion = Conexion::conectar();
-        $login = new Auth($conexion);
-        $login->login();
-        break;
+            $conexion = Conexion::conectar();
+            $login = new Auth($conexion);
+            $login->login();
+            break;
+
+        case 'admin':
+            session_start();
+            if(isset($_SESSION['rol']) AND $_SESSION['rol'] == 'admin' ){
+                $dashboard = new DashboardAdmin();
+                $dashboard->dashboardAdmin();
+                break;
+            }
+            header("Location: index.php?route=login");
+            break;
     }
 
 
