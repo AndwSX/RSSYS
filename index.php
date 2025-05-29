@@ -1,7 +1,6 @@
 <?php
 
 include 'homepage/controlador.php';
-include 'config/database.php';
 include 'auth/controlador.php';
 include 'admin/controlador.php';
 
@@ -14,9 +13,17 @@ if(isset($_GET['route'])){
     switch($route){
 
         case 'login':
+            include 'config/database.php';
             $conexion = Conexion::conectar();
             $login = new Auth($conexion);
             $login->login();
+            break;
+        
+        case 'registro':
+            include 'config/database.php';
+            $conexion = Conexion::conectar();
+            $registro = new Auth($conexion);
+            $registro->registro();
             break;
 
         case 'admin':

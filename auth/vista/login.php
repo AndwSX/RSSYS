@@ -26,7 +26,7 @@
         </form>
         <div class="text-center">
           <a href="olvide_contraseña.html" class="d-block link-success">¿Olvidaste tu contraseña?</a>
-          <a href="registro.php" class="d-block link-success">Registrarse</a>
+          <a href="index.php?route=registro" class="d-block link-success">Registrarse</a>
           <a href="index.php" class="d-block link-success">Volver al inicio</a>
         </div>
       </div>

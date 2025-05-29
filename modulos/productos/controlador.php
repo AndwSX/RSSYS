@@ -15,6 +15,14 @@ class Productos{
                     include 'modulos/productos/vista/registrarProducto.php';
                     break;
 
+                case 'ver':
+                    include 'modulos/productos/vista/verProductos.php';
+                    break;
+                
+                case 'modificar':
+                    include 'modulos/productos/vista/modificarProducto.php';
+                    break;
+
                 case 'stock':
                     include 'modulos/productos/vista/stock.php';
                     break;

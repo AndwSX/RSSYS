@@ -25,7 +25,9 @@
         <li><a class="dropdown-item" href="#">Editar perfil</a></li>
         <li><a class="dropdown-item" href="#">Configuración</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="index.php">Cerrar sesión</a></li>
+        <form action="auth/cerrar_sesion.php" method="POST">
+          <li><button class="dropdown-item" type="submit">Cerrar Sesión</button></li>
+        </form>
       </ul>
     </div>
   </div>
@@ -47,15 +49,15 @@
         </a>
         <ul class="collapse ps-4" id="productosSubmenu">
           <li><a class="nav-link text-white" href="index.php?route=admin&modulo=productos&accion=registrar">Registrar Producto</a></li>
-          <li><a class="nav-link text-white" href="#" id="verProductos">Ver productos</a></li>
-          <li><a class="nav-link text-white" href="#" id="modificarProducto">Modificar Producto</a></li>
-          <li><a class="nav-link text-white" href="#" id="verStock">Stock</a></li>
+          <li><a class="nav-link text-white" href="index.php?route=admin&modulo=productos&accion=ver">Ver productos</a></li>
+          <li><a class="nav-link text-white" href="index.php?route=admin&modulo=productos&accion=modificar">Modificar Producto</a></li>
+          <li><a class="nav-link text-white" href="index.php?route=admin&modulo=productos&accion=stock">Stock</a></li>
 
         </ul>
       </li>
 <li class="nav-item mb-2">
   <a class="nav-link text-white d-flex align-items-center"
-     href="../../modelo/registros.php"
+     href="index.php?route=admin&modulo=usuarios"
      style="text-decoration: none;">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
          fill="white" class="bi bi-person me-2" viewBox="0 0 16 16">
@@ -115,9 +117,13 @@
             $productos = new Productos();
             $productos->productos();
             break;
-          
-          default:
-            # code...
+
+          case 'usuarios':
+            include 'modulos/gestionUsuarios/controlador.php';
+            include 'config/database.php';
+            $conexion = Conexion::conectar();
+            $usuarios = new GestionUsuarios($conexion);
+            $usuarios->gestionUsuarios();
             break;
         }
       }else{
@@ -131,85 +137,10 @@
   </main>
 </div>
 
-
-
-
-
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/admin/sidebar.js"></script>
 <script>
-
-    // Paso 2
-    setTimeout(() => {
-      document.getElementById("siguientePaso").addEventListener("click", () => {
-        document.getElementById("contenido-principal").innerHTML = `
-          <h3>Registrar Producto - Paso 2</h3>
-          <form>
-            <div class="mb-3"><label for="codigo" class="form-label">Código del Producto</label><input type="text" class="form-control" id="codigo"></div>
-            <div class="mb-3"><label for="fechaRegistro" class="form-label">Fecha de Registro</label><input type="date" class="form-control" id="fechaRegistro"></div>
-            <div class="mb-3"><label for="estado" class="form-label">Estado</label>
-              <select class="form-select" id="estado">
-                <option value="disponible">Disponible</option>
-                <option value="agotado">Agotado</option>
-              </select>
-            </div>
-            <div class="mb-3"><label for="imagen" class="form-label">Imagen del Producto</label><input type="file" class="form-control" id="imagen"></div>
-            <button type="submit" class="btn btn-primary me-2" id="registrarFinal">Registrar</button>
-            <button type="button" class="btn btn-secondary" id="regresarRegistro">Regresar</button>
-          </form>
-        `;
-
-        document.getElementById("regresarRegistro").addEventListener("click", () => {
-          document.getElementById("registrarProducto").click();
-        });
-
-        document.getElementById("registrarFinal").addEventListener("click", function(e) {
-          e.preventDefault();
-          alert("Producto registrado exitosamente.");
-          document.getElementById("verProductos").click();
-        });
-
-        document.getElementById("regresarInicio").addEventListener("click", () => {
-          document.getElementById("inicioLink").click();
-        });
-      });
-    }, 100);
-  });
-
-  // Modificar producto
-    document.getElementById("modificarSiguiente").addEventListener("click", () => {
-      document.getElementById("contenido-principal").innerHTML = `
-        <h3>Modificar Producto - Paso 2</h3>
-        <form>
-          <div class="mb-3"><label for="nuevoPrecio" class="form-label">Nuevo Precio</label><input type="number" class="form-control" id="nuevoPrecio"></div>
-          <div class="mb-3"><label for="nuevaDescripcion" class="form-label">Nueva Descripción</label><textarea class="form-control" id="nuevaDescripcion" rows="3"></textarea></div>
-          <div class="mb-3"><label for="nuevoEstado" class="form-label">Nuevo Estado</label>
-            <select class="form-select" id="nuevoEstado">
-              <option value="disponible">Disponible</option>
-              <option value="agotado">Agotado</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary me-2" id="modificarFinal">Guardar Cambios</button>
-          <button type="button" class="btn btn-secondary" id="regresarModificar">Regresar</button>
-        </form>
-      `;
-
-      document.getElementById("regresarModificar").addEventListener("click", () => {
-        document.getElementById("modificarProducto").click();
-      });
-
-      document.getElementById("modificarFinal").addEventListener("click", function(e) {
-        e.preventDefault();
-        alert("Producto modificado exitosamente.");
-        document.getElementById("verProductos").click();
-      });
-    });
-
-    document.getElementById("regresarInicioMod").addEventListener("click", () => {
-      document.getElementById("inicioLink").click();
-    });
-  });
 
 
 //Registrar factura

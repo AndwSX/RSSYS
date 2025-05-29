@@ -1,0 +1,48 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .register-container {
+    height: 100vh;
+  }
+  
+  .left-panel {
+    background-color: rgb(25, 135, 84);
+    flex: 1;
+    padding: 2rem;
+    color: white;
+  }
+  
+  .right-panel {
+    background-color: #f8f9fa;
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .logo-img {
+    max-width: 200px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  
+  .brand-title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .form-box {
+    max-width: 450px;
+  }
+  
+  .role-buttons .btn {
+    width: 48%;
+  }
+  
+  .btn-selected {
+    border: 2px solid #198754 !important;
+  }
+  
