@@ -15,20 +15,20 @@
                     <a href="index.php?route=admin&modulo=usuarios&accion=nuevoRegistro" class="btn btn-success w-100">Nuevo Registro</a>
                 </div>
                 <div class="col-2">
-                <a href="provedores/modelo/registrar.php" class="btn btn-success">Nuevo proveedor</a>
+                <a href="index.php?route=admin&modulo=usuarios&accion=nuevoProveedor" class="btn btn-success">Nuevo proveedor</a>
             </div>
 
                 <div class="col-md-2 mb-2">
-                    <a href="/modelo/select.php" class="btn btn-success w-100">Registro clientes</a>
+                    <a href="index.php?route=admin&modulo=usuarios&accion=registroClientes" class="btn btn-success w-100">Registro clientes</a>
                 </div>
                 <div class="col-md-2 mb-2">
-                    <a href="/modelo/empleados.php" class="btn btn-success w-100">Registro empleados</a>
+                    <a href="index.php?route=admin&modulo=usuarios&accion=registroEmpleados" class="btn btn-success w-100">Registro empleados</a>
                 </div>
                 <div class="col-2">
-                    <a href="/provedores/modelo/select.php" class="btn btn-success">Proveedores </a>
+                    <a href="index.php?route=admin&modulo=usuarios&accion=proveedores" class="btn btn-success">Proveedores </a>
             </div>
              <div class="col-md-2 mb-2">
-                  <a href="/CRUD_USUARIOS/modelo/gestion_pedidos/sect.php" class="btn btn-success">gestión de pedidos</a>
+                  <a href="index.php?route=admin&modulo=usuarios&accion=gestionPedido" class="btn btn-success">gestión de pedidos</a>
 
             </div>
 

@@ -72,7 +72,7 @@
 </li>
 <li class="nav-item mb-2">
   <a class="nav-link text-white d-flex align-items-center"
-     href="#"
+     href=""
      id="gestionPedidosLink"
      style="text-decoration: none;">
     <i class="bi bi-cart4 me-2"></i>

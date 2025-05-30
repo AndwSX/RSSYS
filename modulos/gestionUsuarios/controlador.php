@@ -17,7 +17,29 @@ class GestionUsuarios{
             case 'nuevoRegistro':
                 include 'modulos/gestionUsuarios/vista/nuevoRegistro.php';
                 break;
-                
+            
+            case 'nuevoProveedor':
+                include 'modulos/gestionUsuarios/vista/nuevoProveedor.php';
+                break;
+            
+            case 'registroClientes':
+                $clientes = $this->usuariosModel->obtenerClientes($busqueda);
+                include 'modulos/gestionUsuarios/vista/registroClientes.php';
+                break;
+            
+            case 'registroEmpleados':
+                $empleados = $this->usuariosModel->obtenerEmpleados($busqueda);
+                include 'modulos/gestionUsuarios/vista/registroEmpleados.php';
+                break;
+
+            case 'proveedores':
+                include 'modulos/gestionUsuarios/vista/proveedores.php';
+                break;
+            
+            case 'gestionPedido':
+                include 'modulos/gestionUsuarios/vista/gestionPedido.php';
+                break;
+
             default:
                 // Obtener parámetro de búsqueda si existe
                 $busqueda = $_GET['busqueda'] ?? '';
